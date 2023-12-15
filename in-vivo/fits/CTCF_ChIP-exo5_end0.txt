@@ -1,0 +1,328 @@
+### Regularization:
+	 L1 Lambda: 0
+	 L2 Lambda: 1e-06
+	 Pseudocount: 0
+	 Exponential Bound: 40
+	 Excluded Reg.: frozenset()
+	 Eq. Contribution: False
+	 Weights: [1.0]
+
+### Experiments:
+	Experiment: 0thExperiment
+		Rounds: [0thExperiment→0thInitialRound, 0thExperiment→1stBoundUnsaturatedRound]
+
+### Binding Components:
+	 Mode 0: (NSNonSpecific,)
+		0thExperiment→1stBoundUnsaturatedRound→Aggregate→0thContribution
+	 Mode 1: (0thRollSpec, CTCFPSAM)
+		0thExperiment→1stBoundUnsaturatedRound→Aggregate→1stContribution
+
+### Tables:
+	Table: 0
+		Maximum Variable Length: 140
+		Left Flank Length: 0
+		Right Flank Length: 0
+
+### Training Mode 0: NSNonSpecific
+	MultiExperimentLoss → 0thExperiment → 0thExperiment→1stBoundUnsaturatedRound → 0thExperiment→1stBoundUnsaturatedRound→Aggregate → 0thExperiment→1stBoundUnsaturatedRound→Aggregate→0thContribution → 0thExperiment→NSNonSpecificMode
+	0.	MultiExperimentLoss.freeze()
+		0thExperiment→1stBoundUnsaturatedRound→Aggregate.activity_heuristic(contribution=0thExperiment→1stBoundUnsaturatedRound→Aggregate→0thContribution)
+		0thExperiment→1stBoundUnsaturatedRound.unfreeze(parameter=depth)
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 0.0
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=False -4.9416422843933105
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -inf
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=False
+					tensor([[[0., 0., 0.,  ..., 0., 0., 0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=False
+					tensor([-0.0856,  0.0717,  0.0058,  0.0450, -0.0191,  0.0468, -0.0230,  0.0453,
+			                 0.0371,  0.0864,  0.0790,  0.0910, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393,  0.1179, -0.0393, -0.0393,  0.0680,  0.0680, -0.0680, -0.0680,
+			                -0.0680,  0.0680, -0.0680,  0.0680, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393, -0.0393,  0.1179,  0.1179, -0.0393, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393, -0.0393,  0.1179,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393,  0.1179, -0.0393,
+			                 0.0043, -0.0232, -0.0619, -0.0793, -0.1173,  0.0261, -0.0723, -0.0826])
+			Loss decreased
+			Epoch 0 took 0.82s NLL: 0.9438174367 Reg.: 0.0000289349 Distance: 2.0479702950 Patience: 10
+			Epoch 1 took 0.20s NLL: 0.9438174367 Reg.: 0.0000289349 Distance: 0.0000000000 Patience: 9
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 2.0479702949523926
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=False -4.9416422843933105
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -inf
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=False
+					tensor([[[0., 0., 0.,  ..., 0., 0., 0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=False
+					tensor([-0.0856,  0.0717,  0.0058,  0.0450, -0.0191,  0.0468, -0.0230,  0.0453,
+			                 0.0371,  0.0864,  0.0790,  0.0910, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393,  0.1179, -0.0393, -0.0393,  0.0680,  0.0680, -0.0680, -0.0680,
+			                -0.0680,  0.0680, -0.0680,  0.0680, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393, -0.0393,  0.1179,  0.1179, -0.0393, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393, -0.0393,  0.1179,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393,  0.1179, -0.0393,
+			                 0.0043, -0.0232, -0.0619, -0.0793, -0.1173,  0.0261, -0.0723, -0.0826]) 
+
+	1.	MultiExperimentLoss.unfreeze(parameter=all)
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 2.0479702949523926
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=True -4.9416422843933105
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -inf
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=False
+					tensor([[[0., 0., 0.,  ..., 0., 0., 0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=False
+					tensor([-0.0856,  0.0717,  0.0058,  0.0450, -0.0191,  0.0468, -0.0230,  0.0453,
+			                 0.0371,  0.0864,  0.0790,  0.0910, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393,  0.1179, -0.0393, -0.0393,  0.0680,  0.0680, -0.0680, -0.0680,
+			                -0.0680,  0.0680, -0.0680,  0.0680, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393, -0.0393,  0.1179,  0.1179, -0.0393, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393, -0.0393,  0.1179,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393,  0.1179, -0.0393,
+			                 0.0043, -0.0232, -0.0619, -0.0793, -0.1173,  0.0261, -0.0723, -0.0826])
+			Epoch 0 took 0.20s NLL: 0.9438174367 Reg.: 0.0000289349 Distance: 0.0000000000 Patience: 9
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 2.0479702949523926
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=True -4.9416422843933105
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -inf
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=False
+					tensor([[[0., 0., 0.,  ..., 0., 0., 0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=False
+					tensor([-0.0856,  0.0717,  0.0058,  0.0450, -0.0191,  0.0468, -0.0230,  0.0453,
+			                 0.0371,  0.0864,  0.0790,  0.0910, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393,  0.1179, -0.0393, -0.0393,  0.0680,  0.0680, -0.0680, -0.0680,
+			                -0.0680,  0.0680, -0.0680,  0.0680, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393, -0.0393,  0.1179,  0.1179, -0.0393, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393, -0.0393,  0.1179,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393,  0.1179, -0.0393,
+			                 0.0043, -0.0232, -0.0619, -0.0793, -0.1173,  0.0261, -0.0723, -0.0826]) 
+
+
+### Training Mode 1: 0thRollSpec-CTCFPSAM
+	MultiExperimentLoss → 0thExperiment → 0thExperiment→1stBoundUnsaturatedRound → 0thExperiment→1stBoundUnsaturatedRound→Aggregate → 0thExperiment→1stBoundUnsaturatedRound→Aggregate→1stContribution → 0thExperiment→0thRollSpec-CTCFPSAMMode
+	0.	MultiExperimentLoss.freeze()
+		0thExperiment→1stBoundUnsaturatedRound→Aggregate.activity_heuristic(contribution=0thExperiment→1stBoundUnsaturatedRound→Aggregate→1stContribution)
+		0thExperiment→1stBoundUnsaturatedRound.unfreeze(parameter=depth)
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 2.0479702949523926
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=False -5.047002792358398
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -7.801478385925293
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=False
+					tensor([[[0., 0., 0.,  ..., 0., 0., 0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=False
+					tensor([-0.0856,  0.0717,  0.0058,  0.0450, -0.0191,  0.0468, -0.0230,  0.0453,
+			                 0.0371,  0.0864,  0.0790,  0.0910, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393,  0.1179, -0.0393, -0.0393,  0.0680,  0.0680, -0.0680, -0.0680,
+			                -0.0680,  0.0680, -0.0680,  0.0680, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393, -0.0393,  0.1179,  0.1179, -0.0393, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393, -0.0393,  0.1179,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393,  0.1179, -0.0393,
+			                 0.0043, -0.0232, -0.0619, -0.0793, -0.1173,  0.0261, -0.0723, -0.0826])
+			Loss decreased
+			Epoch 0 took 7.33s NLL: 0.9436917901 Reg.: 0.0000908509 Distance: 0.0001089573 Patience: 10
+			Loss decreased
+			Epoch 1 took 7.30s NLL: 0.9436916709 Reg.: 0.0000908548 Distance: 0.0009677410 Patience: 10
+			Epoch 2 took 4.90s NLL: 0.9436916709 Reg.: 0.0000908548 Distance: 0.0000000000 Patience: 9
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 2.0490469932556152
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=False -5.047002792358398
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -7.801478385925293
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=False
+					tensor([[[0., 0., 0.,  ..., 0., 0., 0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=False
+					tensor([-0.0856,  0.0717,  0.0058,  0.0450, -0.0191,  0.0468, -0.0230,  0.0453,
+			                 0.0371,  0.0864,  0.0790,  0.0910, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393,  0.1179, -0.0393, -0.0393,  0.0680,  0.0680, -0.0680, -0.0680,
+			                -0.0680,  0.0680, -0.0680,  0.0680, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393, -0.0393,  0.1179,  0.1179, -0.0393, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393, -0.0393,  0.1179,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393,  0.1179, -0.0393,
+			                 0.0043, -0.0232, -0.0619, -0.0793, -0.1173,  0.0261, -0.0723, -0.0826]) 
+
+	1.	CTCFPSAM.unfreeze(parameter=monomer)
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 2.0490469932556152
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=False -5.047002792358398
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -7.801478385925293
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=False
+					tensor([[[0., 0., 0.,  ..., 0., 0., 0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=True
+					tensor([-0.0856,  0.0717,  0.0058,  0.0450, -0.0191,  0.0468, -0.0230,  0.0453,
+			                 0.0371,  0.0864,  0.0790,  0.0910, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393,  0.1179, -0.0393, -0.0393,  0.0680,  0.0680, -0.0680, -0.0680,
+			                -0.0680,  0.0680, -0.0680,  0.0680, -0.0393,  0.1179, -0.0393, -0.0393,
+			                -0.0393, -0.0393, -0.0393,  0.1179,  0.1179, -0.0393, -0.0393, -0.0393,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393, -0.0393,  0.1179,
+			                -0.0393, -0.0393,  0.1179, -0.0393, -0.0393, -0.0393,  0.1179, -0.0393,
+			                 0.0043, -0.0232, -0.0619, -0.0793, -0.1173,  0.0261, -0.0723, -0.0826])
+			Loss decreased
+			Epoch 0 took 347.03s NLL: 0.9405649900 Reg.: 0.0001028673 Distance: 3.2931308746 Patience: 10
+			Loss decreased
+			Epoch 1 took 20.16s NLL: 0.9405644536 Reg.: 0.0001029238 Distance: 0.1007516682 Patience: 10
+			Loss decreased
+			Epoch 2 took 41.79s NLL: 0.9405642748 Reg.: 0.0001029442 Distance: 0.0089698276 Patience: 10
+			Epoch 3 took 41.51s NLL: 0.9405642748 Reg.: 0.0001029442 Distance: 0.0000000000 Patience: 9
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 1.677932858467102
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=False -5.047002792358398
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -7.801478385925293
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=False
+					tensor([[[0., 0., 0.,  ..., 0., 0., 0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=True
+					tensor([-0.2416,  0.2053,  0.1383,  0.0085,  0.1426,  0.1161,  0.1852, -0.3228,
+			                 0.0864,  0.0943,  0.4782, -0.3418, -0.3066,  0.6783, -0.4049,  0.1140,
+			                -0.2901, -0.3284,  0.9218, -0.2225, -0.3249,  0.8277, -0.1980, -0.2240,
+			                -0.4415,  0.9430, -0.3331, -0.0875,  0.2461,  0.7017, -0.5061, -0.3609,
+			                -0.5616,  0.7602, -0.5927,  0.4748, -0.5538,  0.9234, -0.1404, -0.1484,
+			                -0.7486, -0.1087, -0.0362,  0.9743,  0.5428, -0.5778,  0.3183, -0.2025,
+			                -0.2927,  0.1194,  0.4960, -0.2419, -0.1845,  0.2283, -0.4839,  0.5209,
+			                -0.4756, -0.1454,  0.9799, -0.2782, -0.2386, -0.1164,  0.7646, -0.3288,
+			                 0.0861,  0.1989, -0.4326,  0.0996,  0.0221,  0.1024, -0.0909, -0.1509]) 
+
+	2.	0thExperiment→0thRollSpec-CTCFPSAMMode→Layer1:CTCFPSAM←Conv1d.unfreeze(parameter=posbias)
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 1.677932858467102
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=False -5.047002792358398
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -7.801478385925293
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=True
+					tensor([[[0., 0., 0.,  ..., 0., 0., 0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=True
+					tensor([-0.2416,  0.2053,  0.1383,  0.0085,  0.1426,  0.1161,  0.1852, -0.3228,
+			                 0.0864,  0.0943,  0.4782, -0.3418, -0.3066,  0.6783, -0.4049,  0.1140,
+			                -0.2901, -0.3284,  0.9218, -0.2225, -0.3249,  0.8277, -0.1980, -0.2240,
+			                -0.4415,  0.9430, -0.3331, -0.0875,  0.2461,  0.7017, -0.5061, -0.3609,
+			                -0.5616,  0.7602, -0.5927,  0.4748, -0.5538,  0.9234, -0.1404, -0.1484,
+			                -0.7486, -0.1087, -0.0362,  0.9743,  0.5428, -0.5778,  0.3183, -0.2025,
+			                -0.2927,  0.1194,  0.4960, -0.2419, -0.1845,  0.2283, -0.4839,  0.5209,
+			                -0.4756, -0.1454,  0.9799, -0.2782, -0.2386, -0.1164,  0.7646, -0.3288,
+			                 0.0861,  0.1989, -0.4326,  0.0996,  0.0221,  0.1024, -0.0909, -0.1509])
+			Loss decreased
+			Epoch 0 took 57.14s NLL: 0.9405345917 Reg.: 0.0001038713 Distance: 0.9837698340 Patience: 10
+			Loss decreased
+			Epoch 1 took 35.81s NLL: 0.9405316710 Reg.: 0.0001039269 Distance: 0.1218689457 Patience: 10
+			Loss decreased
+			Epoch 2 took 13.54s NLL: 0.9405314922 Reg.: 0.0001039222 Distance: 0.0265837219 Patience: 10
+			Loss decreased
+			Epoch 3 took 61.06s NLL: 0.9405287504 Reg.: 0.0001039847 Distance: 0.3311797082 Patience: 10
+			Loss decreased
+			Epoch 4 took 13.47s NLL: 0.9405286312 Reg.: 0.0001039857 Distance: 0.0155483279 Patience: 10
+			Loss decreased
+			Epoch 5 took 32.43s NLL: 0.9405286312 Reg.: 0.0001039749 Distance: 0.0176031366 Patience: 10
+			Epoch 6 took 28.26s NLL: 0.9405286312 Reg.: 0.0001039749 Distance: 0.0000000000 Patience: 9
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 1.665421485900879
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=False -5.047002792358398
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=False -7.801478385925293
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=True
+					tensor([[[ 0.6374, -0.1733, -0.4559,  ..., -0.3161,  0.3596,  0.5718]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=True
+					tensor([-0.2209,  0.1812,  0.1496,  0.0107,  0.1530,  0.0684,  0.1991, -0.2905,
+			                 0.0852,  0.1068,  0.4697, -0.3567, -0.2975,  0.6939, -0.4063,  0.1041,
+			                -0.2415, -0.2951,  0.9065, -0.2758, -0.3378,  0.8351, -0.1867, -0.2165,
+			                -0.4868,  0.9031, -0.2295, -0.0927,  0.2449,  0.7003, -0.4961, -0.3550,
+			                -0.5344,  0.7518, -0.5973,  0.4739, -0.5489,  0.9536, -0.1743, -0.1363,
+			                -0.6770, -0.0651, -0.0974,  0.9336,  0.5230, -0.4999,  0.2986, -0.2275,
+			                -0.2839,  0.1027,  0.5095, -0.2343, -0.1818,  0.2121, -0.4590,  0.5228,
+			                -0.5071, -0.1364,  0.9702, -0.2326, -0.2711, -0.0614,  0.7727, -0.3461,
+			                 0.1220,  0.2165, -0.4547,  0.0953,  0.0664,  0.1150, -0.1389, -0.1252]) 
+
+	3.	MultiExperimentLoss.unfreeze(parameter=all)
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 1.665421485900879
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=True -5.047002792358398
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=True -7.801478385925293
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=True
+					tensor([[[ 0.6374, -0.1733, -0.4559,  ..., -0.3161,  0.3596,  0.5718]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=True
+					tensor([-0.2209,  0.1812,  0.1496,  0.0107,  0.1530,  0.0684,  0.1991, -0.2905,
+			                 0.0852,  0.1068,  0.4697, -0.3567, -0.2975,  0.6939, -0.4063,  0.1041,
+			                -0.2415, -0.2951,  0.9065, -0.2758, -0.3378,  0.8351, -0.1867, -0.2165,
+			                -0.4868,  0.9031, -0.2295, -0.0927,  0.2449,  0.7003, -0.4961, -0.3550,
+			                -0.5344,  0.7518, -0.5973,  0.4739, -0.5489,  0.9536, -0.1743, -0.1363,
+			                -0.6770, -0.0651, -0.0974,  0.9336,  0.5230, -0.4999,  0.2986, -0.2275,
+			                -0.2839,  0.1027,  0.5095, -0.2343, -0.1818,  0.2121, -0.4590,  0.5228,
+			                -0.5071, -0.1364,  0.9702, -0.2326, -0.2711, -0.0614,  0.7727, -0.3461,
+			                 0.1220,  0.2165, -0.4547,  0.0953,  0.0664,  0.1150, -0.1389, -0.1252])
+			Epoch 0 took 6.22s NLL: 0.9405286312 Reg.: 0.0001039749 Distance: 0.0000000000 Patience: 9
+				experiments.0.rounds.0.log_depth grad=False 0.0
+				experiments.0.rounds.1.log_depth grad=True 1.665421485900879
+				experiments.0.rounds.1.aggregate.log_target_concentration grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.log_activity grad=True -5.047002792358398
+				experiments.0.rounds.1.aggregate.contributions.0.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.0.binding.layers.0.log_posbias grad=False tensor([[[0.]]])
+				experiments.0.rounds.1.aggregate.contributions.1.log_activity grad=True -7.801478385925293
+				experiments.0.rounds.1.aggregate.contributions.1.binding.log_hill grad=False 0.0
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.log_posbias grad=True
+					tensor([[[ 0.6374, -0.1733, -0.4559,  ..., -0.3161,  0.3596,  0.5718]]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.bias grad=False tensor([[0.]])
+				experiments.0.rounds.1.aggregate.contributions.1.binding.layers.1.layer_spec.betas-monomer grad=True
+					tensor([-0.2209,  0.1812,  0.1496,  0.0107,  0.1530,  0.0684,  0.1991, -0.2905,
+			                 0.0852,  0.1068,  0.4697, -0.3567, -0.2975,  0.6939, -0.4063,  0.1041,
+			                -0.2415, -0.2951,  0.9065, -0.2758, -0.3378,  0.8351, -0.1867, -0.2165,
+			                -0.4868,  0.9031, -0.2295, -0.0927,  0.2449,  0.7003, -0.4961, -0.3550,
+			                -0.5344,  0.7518, -0.5973,  0.4739, -0.5489,  0.9536, -0.1743, -0.1363,
+			                -0.6770, -0.0651, -0.0974,  0.9336,  0.5230, -0.4999,  0.2986, -0.2275,
+			                -0.2839,  0.1027,  0.5095, -0.2343, -0.1818,  0.2121, -0.4590,  0.5228,
+			                -0.5071, -0.1364,  0.9702, -0.2326, -0.2711, -0.0614,  0.7727, -0.3461,
+			                 0.1220,  0.2165, -0.4547,  0.0953,  0.0664,  0.1150, -0.1389, -0.1252]) 
+
